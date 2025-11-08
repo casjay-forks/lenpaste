@@ -1,0 +1,35 @@
+name: Tarball
+on:
+  push:
+    tags:
+      - v**
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Get version
+        shell: bash
+        run: echo "version=$(git describe --tags --always | sed 's/-/+/' | sed 's/^v//')" >> $GITHUB_ENV
+
+      - name: Install dependencies
+        shell: bash
+        run: sudo apt-get install -y make golang
+
+      - name: Create tarball
+        shell: bash
+        run: |-
+            make tarball
+            sha256sum ./dist/sources/lenpaste-${{env.version}}.tar.gz
+
+      - name: Attach tarball to release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release upload v${{env.version}} ./dist/sources/lenpaste-${{env.version}}.tar.gz
