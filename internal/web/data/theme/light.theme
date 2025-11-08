@@ -1,0 +1,34 @@
+theme.Name.bn_IN = লাইট থিম 
+theme.Name.de    = Hell
+theme.Name.en    = Light
+theme.Name.ru    = Светлая
+
+font.Default   = sans-serif
+font.Monospace = monospace
+
+// Full theme list here:
+// https://pkg.go.dev/github.com/alecthomas/chroma/v2/styles#pkg-variables
+highlight.Theme = monokailight
+
+color.Font             = #000000
+color.SVG              = black
+color.BackgroundBody   = #CCCCCC
+color.Header           = #E88B2E
+color.HeaderFont       = #FFFFFF
+color.Article          = #E0E0E0
+color.BackgroundBlack  = #000000
+color.FocusOutline     = #342DB5
+color.Element          = #B9B9B9
+
+color.Red  = #FF1F1F
+color.Grey = #888888
+
+color.Button           = #888888
+color.ButtonFont       = #FFFFFF
+color.ButtonHover      = #999999
+color.ButtonGreen      = #66CC00
+color.ButtonGreenFont  = #FFFFFF
+color.ButtonGreenHover = #74D117
+
+color.InputHover       = #C3C3C3
+color.InputPlaceholder = #474747
