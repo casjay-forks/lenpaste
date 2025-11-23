@@ -83,7 +83,6 @@ $RECYCLE.BIN/
 # ignore .build_failed files
 **/.build_failed*
 
-
 # ignore .bak files
 **/*.bak
 
@@ -100,4 +99,7 @@ $RECYCLE.BIN/
 **/*.rewrite.sh
 **/*.refactor.sh
 
+# ignore builds
+binaries/**
+releases/**
 
