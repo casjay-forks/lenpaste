@@ -20,7 +20,7 @@ package apiv1
 
 import (
 	"encoding/json"
-	"github.com/lcomrade/lenpaste/internal/netshare"
+	"github.com/casjay-forks/caspaste/internal/netshare"
 	"net/http"
 )
 

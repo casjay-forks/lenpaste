@@ -19,8 +19,8 @@
 package netshare
 
 import (
-	"github.com/lcomrade/lenpaste/internal/lineend"
-	"github.com/lcomrade/lenpaste/internal/storage"
+	"github.com/casjay-forks/caspaste/internal/lineend"
+	"github.com/casjay-forks/caspaste/internal/storage"
 	"net/http"
 	"strconv"
 	"strings"

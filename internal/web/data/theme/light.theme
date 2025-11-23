@@ -1,34 +1,34 @@
-theme.Name.bn_IN = লাইট থিম 
+theme.Name.bn_IN = লাইট থিম
 theme.Name.de    = Hell
 theme.Name.en    = Light
 theme.Name.ru    = Светлая
 
-font.Default   = sans-serif
-font.Monospace = monospace
+font.Default   = -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif
+font.Monospace = "Fira Code", "JetBrains Mono", Menlo, Monaco, "Courier New", monospace
 
 // Full theme list here:
 // https://pkg.go.dev/github.com/alecthomas/chroma/v2/styles#pkg-variables
-highlight.Theme = monokailight
+highlight.Theme = github
 
-color.Font             = #000000
+color.Font             = #18181B
 color.SVG              = black
-color.BackgroundBody   = #CCCCCC
-color.Header           = #E88B2E
+color.BackgroundBody   = #F4F4F5
+color.Header           = #3B82F6
 color.HeaderFont       = #FFFFFF
-color.Article          = #E0E0E0
+color.Article          = #FFFFFF
 color.BackgroundBlack  = #000000
-color.FocusOutline     = #342DB5
-color.Element          = #B9B9B9
+color.FocusOutline     = #2563EB
+color.Element          = #E4E4E7
 
-color.Red  = #FF1F1F
-color.Grey = #888888
+color.Red  = #DC2626
+color.Grey = #71717A
 
-color.Button           = #888888
+color.Button           = #71717A
 color.ButtonFont       = #FFFFFF
-color.ButtonHover      = #999999
-color.ButtonGreen      = #66CC00
+color.ButtonHover      = #52525B
+color.ButtonGreen      = #22C55E
 color.ButtonGreenFont  = #FFFFFF
-color.ButtonGreenHover = #74D117
+color.ButtonGreenHover = #16A34A
 
-color.InputHover       = #C3C3C3
-color.InputPlaceholder = #474747
+color.InputHover       = #D4D4D8
+color.InputPlaceholder = #71717A

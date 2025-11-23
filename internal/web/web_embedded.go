@@ -19,8 +19,8 @@
 package web
 
 import (
-	"github.com/lcomrade/lenpaste/internal/netshare"
-	"github.com/lcomrade/lenpaste/internal/storage"
+	"github.com/casjay-forks/caspaste/internal/netshare"
+	"github.com/casjay-forks/caspaste/internal/storage"
 	"html/template"
 	"net/http"
 	"time"

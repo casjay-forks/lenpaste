@@ -20,8 +20,8 @@ package raw
 
 import (
 	"errors"
-	"github.com/lcomrade/lenpaste/internal/netshare"
-	"github.com/lcomrade/lenpaste/internal/storage"
+	"github.com/casjay-forks/caspaste/internal/netshare"
+	"github.com/casjay-forks/caspaste/internal/storage"
 	"io"
 	"net/http"
 	"strconv"

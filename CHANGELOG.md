@@ -1,3 +1,59 @@
+## 🔧 Changelog: 2025-11-23 at 09:56:13 🔧  
+
+🔧 Update configuration files 🔧  
+  
+  
+cmd/caspaste/  
+cmd/lenpaste/lenpaste.go  
+Dockerfile  
+entrypoint.sh  
+.github/workflows/build.yml  
+.github/workflows/release_docker.yml  
+.github/workflows/release_sources.yml  
+go.mod  
+go.sum  
+internal/apiv1/api_error.go  
+internal/apiv1/api_get.go  
+internal/apiv1/api.go  
+internal/apiv1/api_main.go  
+internal/apiv1/api_new.go  
+internal/apiv1/api_server.go  
+internal/config/config.go  
+internal/logger/logger.go  
+internal/netshare/netshare_paste.go  
+internal/raw/raw_error.go  
+internal/raw/raw.go  
+internal/raw/raw_raw.go  
+internal/storage/storage.go  
+internal/web/data/about.tmpl  
+internal/web/data/authors.tmpl  
+internal/web/data/base.tmpl  
+internal/web/data/docs_apiv1.tmpl  
+internal/web/data/docs.tmpl  
+internal/web/data/locale/en.json  
+internal/web/data/main.tmpl  
+internal/web/data/source_code.tmpl  
+internal/web/data/style.css  
+internal/web/data/theme/dark.theme  
+internal/web/data/theme/light.theme  
+internal/web/web_dl.go  
+internal/web/web_docs.go  
+internal/web/web_embedded.go  
+internal/web/web_embedded_help.go  
+internal/web/web_error.go  
+internal/web/web_get.go  
+internal/web/web.go  
+internal/web/web_new.go  
+internal/web/web_other.go  
+internal/web/web_settings.go  
+internal/web/web_sitemap.go  
+Makefile  
+README.md  
+
+
+### 🔧 End of changes for 202511230956-git 🔧  
+
+----  
 ## 🐳 Changelog: 2025-11-08 at 18:55:20 🐳  
 
 🐳 Update codebase 🐳  

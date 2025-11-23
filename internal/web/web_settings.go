@@ -19,8 +19,8 @@
 package web
 
 import (
-	"github.com/lcomrade/lenpaste/internal/lenpasswd"
-	"github.com/lcomrade/lenpaste/internal/netshare"
+	"github.com/casjay-forks/caspaste/internal/lenpasswd"
+	"github.com/casjay-forks/caspaste/internal/netshare"
 	"html/template"
 	"net/http"
 )

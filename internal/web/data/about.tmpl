@@ -59,14 +59,14 @@
 {{if ne .AdminMail ``}}<p>{{ call .Translate `about.AdminEmail` }} <a href="mailto:{{.AdminMail}}">{{.AdminMail}}</a></p>{{end}}
 {{end}}
 
-<h3>{{ call .Translate `about.LenpasteTitle` }}</h3>
-<p>{{call .Translate `about.LenpasteMessage` .Version}}</p>
+<h3>{{ call .Translate `about.CasPasteTitle` }}</h3>
+<p>{{call .Translate `about.CasPasteMessage` .Version}}</p>
 <ul>
-	<li>{{ call .Translate `about.Lenpaste1` `/about/source_code` `/about/license` `AGPL 3` }}</li>
-	<li>{{ call .Translate `about.Lenpaste2` }}</li>
-	<li>{{ call .Translate `about.Lenpaste3` }}</li>
-	<li>{{ call .Translate `about.Lenpaste4` }}</li>
-	<li>{{ call .Translate `about.Lenpaste5` `/docs/apiv1` }}</li>
+	<li>{{ call .Translate `about.CasPaste1` `/about/source_code` `/about/license` `AGPL 3` }}</li>
+	<li>{{ call .Translate `about.CasPaste2` }}</li>
+	<li>{{ call .Translate `about.CasPaste3` }}</li>
+	<li>{{ call .Translate `about.CasPaste4` }}</li>
+	<li>{{ call .Translate `about.CasPaste5` `/docs/apiv1` }}</li>
 </ul>
-<p>{{call .Translate `about.LenpasteAuthors` `/about/authors`}}</p>
+<p>{{call .Translate `about.CasPasteAuthors` `/about/authors`}}</p>
 {{end}}

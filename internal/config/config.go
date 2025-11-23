@@ -19,11 +19,11 @@
 package config
 
 import (
-	"github.com/lcomrade/lenpaste/internal/logger"
-	"github.com/lcomrade/lenpaste/internal/netshare"
+	"github.com/casjay-forks/caspaste/internal/logger"
+	"github.com/casjay-forks/caspaste/internal/netshare"
 )
 
-const Software = "Lenpaste"
+const Software = "CasPaste"
 
 type Config struct {
 	Log logger.Logger

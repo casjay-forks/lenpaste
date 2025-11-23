@@ -19,10 +19,10 @@
 package raw
 
 import (
-	"github.com/lcomrade/lenpaste/internal/config"
-	"github.com/lcomrade/lenpaste/internal/logger"
-	"github.com/lcomrade/lenpaste/internal/netshare"
-	"github.com/lcomrade/lenpaste/internal/storage"
+	"github.com/casjay-forks/caspaste/internal/config"
+	"github.com/casjay-forks/caspaste/internal/logger"
+	"github.com/casjay-forks/caspaste/internal/netshare"
+	"github.com/casjay-forks/caspaste/internal/storage"
 	"net/http"
 )
 

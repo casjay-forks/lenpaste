@@ -20,7 +20,7 @@ package web
 
 import (
 	chromaLexers "github.com/alecthomas/chroma/v2/lexers"
-	"github.com/lcomrade/lenpaste/internal/netshare"
+	"github.com/casjay-forks/caspaste/internal/netshare"
 	"net/http"
 	"strings"
 	"time"

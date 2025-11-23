@@ -21,8 +21,9 @@ package storage
 import (
 	"database/sql"
 	"errors"
+
 	_ "github.com/lib/pq"
-	_ "github.com/mattn/go-sqlite3"
+	_ "modernc.org/sqlite"
 )
 
 var (
@@ -76,8 +77,8 @@ func InitDB(driverName string, dataSourceName string) error {
 		return err
 	}
 
-	// Crutch for SQLite3
-	if driverName == "sqlite3" {
+	// Crutch for SQLite
+	if driverName == "sqlite3" || driverName == "sqlite" {
 		_, err = db.pool.Exec(`ALTER TABLE pastes ADD COLUMN author       TEXT NOT NULL DEFAULT ''`)
 		if err != nil {
 			if err.Error() != "duplicate column name: author" {

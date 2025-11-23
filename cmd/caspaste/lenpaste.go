@@ -27,14 +27,14 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/lcomrade/lenpaste/internal/apiv1"
-	"github.com/lcomrade/lenpaste/internal/cli"
-	"github.com/lcomrade/lenpaste/internal/config"
-	"github.com/lcomrade/lenpaste/internal/logger"
-	"github.com/lcomrade/lenpaste/internal/netshare"
-	"github.com/lcomrade/lenpaste/internal/raw"
-	"github.com/lcomrade/lenpaste/internal/storage"
-	"github.com/lcomrade/lenpaste/internal/web"
+	"github.com/casjay-forks/caspaste/internal/apiv1"
+	"github.com/casjay-forks/caspaste/internal/cli"
+	"github.com/casjay-forks/caspaste/internal/config"
+	"github.com/casjay-forks/caspaste/internal/logger"
+	"github.com/casjay-forks/caspaste/internal/netshare"
+	"github.com/casjay-forks/caspaste/internal/raw"
+	"github.com/casjay-forks/caspaste/internal/storage"
+	"github.com/casjay-forks/caspaste/internal/web"
 )
 
 var Version = "unknown"

@@ -1,141 +1,139 @@
 /*
    Copyright (C) 2021-2023 Leonid Maslakov.
+   Copyright (C) 2024 CasjaysDev.
 
-   This file is part of Lenpaste.
+   This file is part of CasjaysDev Pastes (fork of Lenpaste).
 
-   Lenpaste is free software: you can redistribute it
+   CasjaysDev Pastes is free software: you can redistribute it
    and/or modify it under the terms of the
    GNU Affero Public License as published by the
    Free Software Foundation, either version 3 of the License,
    or (at your option) any later version.
 
-   Lenpaste is distributed in the hope that it will be useful,
+   CasjaysDev Pastes is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
    or FITNESS FOR A PARTICULAR PURPOSE.
    See the GNU Affero Public License for more details.
 
-   You should have received a copy of the GNU Affero Public License along with Lenpaste.
+   You should have received a copy of the GNU Affero Public License along with CasjaysDev Pastes.
    If not, see <https://www.gnu.org/licenses/>.
 */
 
+/* CSS RESET & BASE */
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
 /* MAIN */
 body {
-	width: 70%;
-	margin: 0;
-	margin-left: auto;
-	margin-right: auto;
+	width: min(90%, 1200px);
+	margin: 0 auto;
+	padding: 0;
 	font-style: normal;
 	background-color: {{call .Theme `color.BackgroundBody`}};
 	font-family: {{call .Theme `font.Default`}};
-	font-size: 16px;
+	font-size: clamp(14px, 2.5vw, 16px);
+	line-height: 1.5;
 	color: {{call .Theme `color.Font`}};
 }
 
-@media all and (max-device-width: 720px), all and (orientation: portrait) {
-	body {
-		width: 100%;
-	}
-}
-
-@media all and (max-device-width: 640px) {
-	.header-right {
-		display: block;
-		width: 100%;
-	}
-}
-
-
 /* HEADER */
 header {
-	padding-top: 20px;
-	padding-bottom: 20px;
-	padding-left: 20px;
-	padding-right: 20px;
+	padding: 1rem 1.25rem;
 	color: {{call .Theme `color.HeaderFont`}};
 	background: {{call .Theme `color.Header`}};
 }
 
-header h2,
-header h4 {
-	display: inline;
-	margin-right: 15px;
-	padding: 0;
+header nav {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.5rem;
 }
 
-header div {
-	width: 50%;
-	display: inline-block;
+.header-left, .header-right {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.75rem 1rem;
 }
 
-.header-right {
-	text-align: right;
-}
-
-header h2 a, header h2 a:hover,
-header h4 a, header h4 a:hover {
+header a {
 	color: {{call .Theme `color.HeaderFont`}};
 	text-decoration: none;
 	white-space: nowrap;
+	padding: 0.25rem 0;
+	min-height: 44px;
+	display: inline-flex;
+	align-items: center;
 }
 
+header a:hover, header a:focus {
+	color: {{call .Theme `color.HeaderFont`}};
+	text-decoration: underline;
+}
+
+header .site-title {
+	font-size: 1.25rem;
+	font-weight: bold;
+}
+
+/* MAIN CONTENT */
+main {
+	padding: 1.25rem;
+}
 
 /* ARTICLE */
 article {
 	width: 100%;
-	box-sizing: border-box;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	padding: 20px;
-	line-height: 1.5;
+	padding: 1.25rem;
+	line-height: 1.6;
 	background: {{call .Theme `color.Article`}};
+	border-radius: 4px;
 }
-
 
 /* CONTAINERS */
 .stretch-width {
 	width: 100%;
-	box-sizing: border-box;	
 }
 
 .button-block-right {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: flex-end;
-}
-
-.button-block-right button {
-	margin-left: 20px;
+	gap: 0.75rem;
 }
 
 .text-bar {
 	display: flex;
-	justify-content: start;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	gap: 0.5rem 1rem;
 	font-family: {{call .Theme `font.Monospace`}};
 }
 
-.text-bar div {
-	width: 50%;
+.text-bar > div {
+	flex: 1 1 auto;
+	min-width: 150px;
 }
 
-.text-bar h1,
-.text-bar h2,
-.text-bar h3,
-.text-bar h4,
-.text-bar h5,
-.text-bar h6 {
+.text-bar h1, .text-bar h2, .text-bar h3,
+.text-bar h4, .text-bar h5, .text-bar h6 {
 	font-family: {{call .Theme `font.Default`}};
 }
 
 .text-bar-right {
-	align-self: flex-end;
 	text-align: right;
+	flex: 0 1 auto;
 }
 
 .text-bar-right a {
-	margin-left: 10px;
+	margin-left: 0.625rem;
 }
 
-
-/* TEXT */
+/* TEXT COLORS */
 .text-red, .text-red:hover {
 	color: {{call .Theme `color.Red`}};
 }
@@ -144,52 +142,56 @@ article {
 	color: {{call .Theme `color.Grey`}};
 }
 
-
-/* OTHER */
+/* FOCUS STYLES */
 :focus-visible {
 	outline: 2px solid {{call .Theme `color.FocusOutline`}};
+	outline-offset: 2px;
 }
 
 :active {
 	outline: 0;
 }
 
+/* TYPOGRAPHY */
 h1, h2, h3, h4, h5, h6,
 p, pre,
 select, label,
 button, input,
 textarea {
-	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-top: 0.625rem;
+	margin-bottom: 0.625rem;
 }
 
 h4 {
-	margin-top: 40px;
+	margin-top: 2rem;
 }
 
+/* CODE & TEXTAREA */
 pre, textarea {
 	width: 100%;
 	max-width: 100%;
 	min-width: 100%;
-	box-sizing: border-box;
 	tab-size: 4;
 	background-color: {{call .Theme `color.Element`}};
-	padding: 10px;
-	border: 2px;
+	padding: 0.75rem;
+	border: none;
+	border-radius: 4px;
 	font-family: {{call .Theme `font.Monospace`}};
 	font-size: inherit;
 	color: inherit;
 }
 
 pre {
-	overflow: auto;
+	overflow-x: auto;
+	white-space: pre;
 }
 
 textarea {
-	min-height: 100px;
+	min-height: 150px;
 	resize: vertical;
 }
 
+/* FORM ELEMENTS */
 label {
 	font-family: {{call .Theme `font.Default`}};
 }
@@ -203,57 +205,62 @@ input {
 	font-size: inherit;
 	font-family: inherit;
 	color: inherit;
-	padding: 10px;
-	border: 2px;
-	overflow-x: scroll;
+	padding: 0.625rem;
+	border: none;
+	border-radius: 4px;
+	min-height: 44px;
 }
 
 select {
 	appearance: none;
 	background: {{call .Theme `color.Element`}};
 	color: {{call .Theme `color.Font`}};
-	font-size: 16px;
-	padding: 4px 22px 4px 4px;
-	border: 2px;
+	font-size: inherit;
+	padding: 0.5rem 2rem 0.5rem 0.5rem;
+	border: none;
+	border-radius: 4px;
+	min-height: 44px;
+	cursor: pointer;
 }
 
 select:hover, input[type="checkbox"]:hover {
 	background-color: {{call .Theme `color.InputHover`}};
-	cursor: pointer;
 }
 
-select, select:hover {
+select {
 	background-image: url("data:image/svg+xml,<svg width='100' height='180' xmlns='http://www.w3.org/2000/svg'><polyline points='10,80 50,110 90,80' style='fill:none;stroke:{{call .Theme `color.SVG`}};stroke-width:18'/></svg>");
 	background-repeat: no-repeat;
-	background-position: right 4px center;
-	background-size: 10px;
+	background-position: right 0.5rem center;
+	background-size: 0.625rem;
 }
 
 label {
-	margin-right: 10px;
+	margin-right: 0.625rem;
 }
 
 button, select, input, textarea {
-	border-radius: 0;
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-
-	appearance: none;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 }
 
+/* BUTTONS */
 button {
-	 background: {{call .Theme `color.Grey`}};
-	 font-size: 16px;
-	 padding: 8px 8px 8px 8px;
-	 border: 2px;
-	 color: {{call .Theme `color.ButtonFont`}};
+	background: {{call .Theme `color.Button`}};
+	font-size: inherit;
+	padding: 0.625rem 1rem;
+	border: none;
+	border-radius: 4px;
+	color: {{call .Theme `color.ButtonFont`}};
+	cursor: pointer;
+	min-height: 44px;
+	min-width: 44px;
 }
 
 button:hover {
 	background: {{call .Theme `color.ButtonHover`}};
-	cursor: pointer;
 }
 
 .button-green {
@@ -265,79 +272,87 @@ button:hover {
 	background: {{call .Theme `color.ButtonGreenHover`}};
 }
 
+/* CHECKBOX */
 .checkbox {
-	padding-left: 25px;
-}
-
-.checkbox:hover,
-.checkbox:hover input {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
 	cursor: pointer;
+	min-height: 44px;
 }
 
 input[type="checkbox"] {
-	position: absolute;
-	margin-left: -25px;
-	margin-top: 0.1em;
-	overflow: hidden;
+	width: 1.25rem;
+	height: 1.25rem;
+	margin: 0;
+	cursor: pointer;
+	flex-shrink: 0;
 }
 
 input[type="checkbox"]:checked {
 	background-image: url("data:image/svg+xml,<svg width='100' height='100' xmlns='http://www.w3.org/2000/svg'><polyline points='20,60 50,80 90,20' style='fill:none;stroke:{{call .Theme `color.SVG`}};stroke-width:18'/></svg>");
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 14px;
+	background-size: 0.875rem;
 }
 
+/* LISTS */
 ul {
 	list-style: square;
+	padding-left: 1.5rem;
 }
 
+/* CODE */
 code {
 	background-color: {{call .Theme `color.Element`}};
-	padding: 2px 5px 2px 5px;
+	padding: 0.125rem 0.375rem;
+	border-radius: 3px;
 	color: inherit;
 }
 
 pre code {
 	background-color: inherit;
+	padding: 0;
 }
 
+/* DETAILS */
 details {
-	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-top: 0.625rem;
+	margin-bottom: 0.625rem;
 }
 
 details summary {
 	cursor: pointer;
+	padding: 0.5rem 0 0.5rem 1.25rem;
+	min-height: 44px;
+	display: flex;
+	align-items: center;
+	list-style-type: none;
+	background-image: url("data:image/svg+xml,<svg width='100' height='100' xmlns='http://www.w3.org/2000/svg'><polygon points='0,0 100,50 0,100' style='fill:{{call .Theme `color.SVG`}}'/></svg>");
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-size: 0.625rem;
 }
 
 details summary::-webkit-details-marker {
-  display:none;
-}
-
-details summary {
-    list-style-type: none;
-	background-image: url("data:image/svg+xml,<svg width='100' height='100' xmlns='http://www.w3.org/2000/svg'><polygon points='0,0 100,50 0,100' style='fill:{{call .Theme `color.SVG`}}'/></svg>");
-	background-repeat: no-repeat;
-	background-position: left;
-	background-size: 10px;
-	padding-left: 14px;
+	display: none;
 }
 
 details[open] summary {
 	background-image: url("data:image/svg+xml,<svg width='100' height='100' xmlns='http://www.w3.org/2000/svg'><polygon points='0,0 50,100 100,0' style='fill:{{call .Theme `color.SVG`}}'/></svg>");
 }
 
+/* TABLES */
 table {
 	background: inherit;
 	border-collapse: collapse;
+	width: 100%;
 }
 
 th, td {
 	text-align: left;
-	padding: 10px;
-	border: 1px;
-	border-style: solid;
+	padding: 0.625rem;
+	border: 1px solid {{call .Theme `color.Element`}};
 	font-size: inherit;
 	font-family: inherit;
 	color: inherit;
@@ -345,10 +360,11 @@ th, td {
 
 .table-hidden td {
 	text-align: right;
-	padding: 0;
+	padding: 0.375rem 0;
 	border: 0;
 }
 
+/* LINKS */
 a, a:hover {
 	color: {{call .Theme `color.FocusOutline`}};
 }
@@ -356,4 +372,122 @@ a, a:hover {
 h1 a, h2 a, h3 a,
 h4 a, h5 a, h6 a {
 	text-decoration: none;
+}
+
+/* MOBILE RESPONSIVE */
+@media screen and (max-width: 768px) {
+	body {
+		width: 100%;
+	}
+
+	main {
+		padding: 1rem 0.75rem;
+	}
+
+	article {
+		padding: 1rem;
+	}
+
+	header {
+		padding: 0.75rem 1rem;
+	}
+
+	header nav {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.header-left, .header-right {
+		justify-content: center;
+	}
+
+	.text-bar {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.text-bar > div {
+		min-width: 100%;
+	}
+
+	.text-bar-right {
+		text-align: left;
+	}
+
+	.button-block-right {
+		justify-content: stretch;
+	}
+
+	.button-block-right button {
+		flex: 1;
+	}
+
+	textarea {
+		min-height: 200px;
+	}
+
+	.table-hidden {
+		display: block;
+	}
+
+	.table-hidden tr {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 0.5rem;
+	}
+
+	.table-hidden td {
+		text-align: left;
+		padding: 0.25rem 0;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	header .site-title {
+		font-size: 1.1rem;
+	}
+
+	h3 {
+		font-size: 1.1rem;
+	}
+
+	.header-left, .header-right {
+		gap: 0.5rem;
+	}
+}
+
+/* LANDSCAPE PHONE */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+	textarea {
+		min-height: 100px;
+	}
+}
+
+/* TOUCH DEVICE OPTIMIZATIONS */
+@media (hover: none) and (pointer: coarse) {
+	button, select, input, .checkbox {
+		min-height: 48px;
+	}
+
+	select {
+		padding-right: 2.5rem;
+	}
+}
+
+/* PRINT STYLES */
+@media print {
+	header, .button-block-right, button {
+		display: none;
+	}
+
+	body {
+		width: 100%;
+		background: white;
+		color: black;
+	}
+
+	article {
+		background: white;
+		padding: 0;
+	}
 }
