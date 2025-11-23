@@ -1,5 +1,5 @@
-# Lenpaste Makefile
-# Build targets: build, release, docker, test
+# CasPaste Makefile
+# Build targets: build, release, test
 
 GO ?= go
 GOFMT ?= gofmt
@@ -33,6 +33,7 @@ LDFLAGS := -w -s -X "main.Version=$(APP_VERSION)"
 STATIC_FLAGS := -tags netgo -ldflags '$(LDFLAGS) -extldflags "-static"'
 
 # Platforms: os_arch
+# Note: NetBSD removed - modernc.org/sqlite doesn't support it
 PLATFORMS := \
     linux_amd64 \
     linux_arm64 \
@@ -43,11 +44,9 @@ PLATFORMS := \
     freebsd_amd64 \
     freebsd_arm64 \
     openbsd_amd64 \
-    openbsd_arm64 \
-    netbsd_amd64 \
-    netbsd_arm64
+    openbsd_arm64
 
-.PHONY: all build release docker test clean fmt version init-version bump-patch bump-minor bump-major
+.PHONY: all build release test clean fmt version init-version bump-patch bump-minor bump-major
 
 # Default target
 all: build
@@ -163,21 +162,6 @@ release: init-version
 		$(RELEASE_DIR)/$(NAME)-*
 
 	@echo "Release v$(APP_VERSION) complete!"
-
-# Build and push Docker image
-docker:
-	@echo "Building Docker image for $(ORGANIZATION)/$(NAME):$(APP_VERSION)..."
-
-	@# Build multi-arch image
-	@docker buildx build \
-		--platform linux/amd64,linux/arm64 \
-		--build-arg VERSION=$(APP_VERSION) \
-		-t ghcr.io/$(ORGANIZATION)/$(NAME):$(APP_VERSION) \
-		-t ghcr.io/$(ORGANIZATION)/$(NAME):latest \
-		--push \
-		.
-
-	@echo "Docker image pushed to ghcr.io/$(ORGANIZATION)/$(NAME):$(APP_VERSION)"
 
 # Run tests
 test:

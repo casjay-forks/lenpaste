@@ -26,14 +26,6 @@ Available platforms:
 - Windows (amd64, arm64)
 - FreeBSD (amd64, arm64)
 - OpenBSD (amd64, arm64)
-- NetBSD (amd64, arm64)
-
-### Docker
-
-```bash
-docker pull ghcr.io/casjay-forks/caspaste:latest
-docker run -p 80:80 -v ./data:/data ghcr.io/casjay-forks/caspaste:latest
-```
 
 ### Build from Source
 
@@ -103,9 +95,6 @@ make test
 
 # Create GitHub release
 make release
-
-# Build Docker image
-make docker
 
 # Bump version
 make bump-patch  # 1.0.0 -> 1.0.1
