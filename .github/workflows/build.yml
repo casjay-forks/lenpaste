@@ -15,7 +15,7 @@ on:
 
 env:
   GO_VERSION: '1.21'
-  PROJECT_NAME: lenpaste
+  PROJECT_NAME: caspaste
 
 jobs:
   test:
@@ -63,11 +63,6 @@ jobs:
           - goos: openbsd
             goarch: amd64
           - goos: openbsd
-            goarch: arm64
-          # NetBSD
-          - goos: netbsd
-            goarch: amd64
-          - goos: netbsd
             goarch: arm64
 
     steps:
@@ -119,7 +114,7 @@ jobs:
           chmod +x "binaries/${OUTPUT}" 2>/dev/null || true
 
           # Strip for Unix-like systems (not macOS or Windows)
-          if [[ "${{ matrix.goos }}" =~ ^(linux|freebsd|openbsd|netbsd)$ ]]; then
+          if [[ "${{ matrix.goos }}" =~ ^(linux|freebsd|openbsd)$ ]]; then
             strip "binaries/${OUTPUT}" 2>/dev/null || true
           fi
 
